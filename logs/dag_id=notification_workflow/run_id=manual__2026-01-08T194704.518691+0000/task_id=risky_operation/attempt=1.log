@@ -1,0 +1,17 @@
+[2026-01-08T19:47:05.623+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: notification_workflow.risky_operation manual__2026-01-08T19:47:04.518691+00:00 [queued]>
+[2026-01-08T19:47:05.632+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: notification_workflow.risky_operation manual__2026-01-08T19:47:04.518691+00:00 [queued]>
+[2026-01-08T19:47:05.632+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2026-01-08T19:47:05.650+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): risky_operation> on 2026-01-08 19:47:04.518691+00:00
+[2026-01-08T19:47:05.656+0000] {standard_task_runner.py:60} INFO - Started process 246 to run task
+[2026-01-08T19:47:05.660+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'notification_workflow', 'risky_operation', 'manual__2026-01-08T19:47:04.518691+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/dag5_notification_workflow.py', '--cfg-path', '/tmp/tmpchvqllp4']
+[2026-01-08T19:47:05.663+0000] {standard_task_runner.py:88} INFO - Job 29: Subtask risky_operation
+[2026-01-08T19:47:05.738+0000] {task_command.py:423} INFO - Running <TaskInstance: notification_workflow.risky_operation manual__2026-01-08T19:47:04.518691+00:00 [running]> on host e8f5ff3ed2ee
+[2026-01-08T19:47:05.839+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='notification_workflow' AIRFLOW_CTX_TASK_ID='risky_operation' AIRFLOW_CTX_EXECUTION_DATE='2026-01-08T19:47:04.518691+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-08T19:47:04.518691+00:00'
+[2026-01-08T19:47:05.847+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:315 AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+[2026-01-08T19:47:05.848+0000] {logging_mixin.py:188} INFO - {'status': 'success', 'execution_date': '2026-01-08 19:47:04.518691+00:00', 'success': True}
+[2026-01-08T19:47:05.848+0000] {python.py:201} INFO - Done. Returned value was: {'status': 'success', 'execution_date': '2026-01-08 19:47:04.518691+00:00', 'success': True}
+[2026-01-08T19:47:05.876+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=notification_workflow, task_id=risky_operation, execution_date=20260108T194704, start_date=20260108T194705, end_date=20260108T194705
+[2026-01-08T19:47:05.878+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:207 AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+[2026-01-08T19:47:05.878+0000] {logging_mixin.py:188} INFO - {'notification_type': 'success', 'status': 'sent', 'message': 'Task risky_operation succeeded on 2026-01-08 19:47:04.518691+00:00', 'timestamp': '2026-01-08T19:47:05.878872'}
+[2026-01-08T19:47:05.915+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-08T19:47:05.979+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -6,7 +6,7 @@ x-airflow-common: &airflow-common
     AIRFLOW__CORE__EXECUTOR: LocalExecutor
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
-    _PIP_ADDITIONAL_REQUIREMENTS: pandas psycopg2-binary
+    _PIP_ADDITIONAL_REQUIREMENTS: pandas psycopg2-binary pytest
     AIRFLOW_CONN_POSTGRES_DEFAULT: postgresql://airflow:airflow@postgres:5432/airflow
   volumes:
     - ./dags:/opt/airflow/dags
@@ -14,6 +14,7 @@ x-airflow-common: &airflow-common
     - ./data:/opt/airflow/data
     - ./output:/opt/airflow/output
     - ./plugins:/opt/airflow/plugins
+    - ./tests:/opt/airflow/tests
   user: "${AIRFLOW_UID:-50000}:0"
 
 services:
