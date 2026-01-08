@@ -1,0 +1,24 @@
+[2026-01-08T19:17:37.516+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: postgres_to_parquet_export.check_source_table_exists manual__2026-01-08T19:17:36.279753+00:00 [queued]>
+[2026-01-08T19:17:37.528+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: postgres_to_parquet_export.check_source_table_exists manual__2026-01-08T19:17:36.279753+00:00 [queued]>
+[2026-01-08T19:17:37.529+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2026-01-08T19:17:37.544+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): check_source_table_exists> on 2026-01-08 19:17:36.279753+00:00
+[2026-01-08T19:17:37.551+0000] {standard_task_runner.py:60} INFO - Started process 256 to run task
+[2026-01-08T19:17:37.555+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'postgres_to_parquet_export', 'check_source_table_exists', 'manual__2026-01-08T19:17:36.279753+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/dag3_postgres_to_parquet.py', '--cfg-path', '/tmp/tmpoghqmu5t']
+[2026-01-08T19:17:37.559+0000] {standard_task_runner.py:88} INFO - Job 21: Subtask check_source_table_exists
+[2026-01-08T19:17:37.669+0000] {task_command.py:423} INFO - Running <TaskInstance: postgres_to_parquet_export.check_source_table_exists manual__2026-01-08T19:17:36.279753+00:00 [running]> on host e8f5ff3ed2ee
+[2026-01-08T19:17:38.055+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='postgres_to_parquet_export' AIRFLOW_CTX_TASK_ID='check_source_table_exists' AIRFLOW_CTX_EXECUTION_DATE='2026-01-08T19:17:36.279753+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-08T19:17:36.279753+00:00'
+[2026-01-08T19:17:38.059+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2026-01-08T19:17:38.060+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2026-01-08T19:17:38.067+0000] {sql.py:450} INFO - Running statement: 
+        SELECT COUNT(*)
+        FROM information_schema.tables
+        WHERE table_name = 'transformed_employee_data'
+        , parameters: None
+[2026-01-08T19:17:38.071+0000] {sql.py:459} INFO - Rows affected: 1
+[2026-01-08T19:17:38.073+0000] {base.py:83} INFO - Using connection ID 'postgres_default' for task execution.
+[2026-01-08T19:17:38.079+0000] {sql.py:450} INFO - Running statement: SELECT COUNT(*) FROM transformed_employee_data, parameters: None
+[2026-01-08T19:17:38.081+0000] {sql.py:459} INFO - Rows affected: 1
+[2026-01-08T19:17:38.082+0000] {python.py:201} INFO - Done. Returned value was: True
+[2026-01-08T19:17:38.112+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=postgres_to_parquet_export, task_id=check_source_table_exists, execution_date=20260108T191736, start_date=20260108T191737, end_date=20260108T191738
+[2026-01-08T19:17:38.172+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-01-08T19:17:38.205+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
